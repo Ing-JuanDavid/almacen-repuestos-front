@@ -1,10 +1,17 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { useRouter } from 'vue-router'
+import { computed } from 'vue'
 import MainPanelTemplate from './views/MainPanelTemplate.vue'
+
+const router = useRouter()
+
+// Mostrar el template solo si no estamos en login
+const showMainPanel = computed(() => router.currentRoute.value.name !== 'login')
 </script>
 
 <template>
-  <MainPanelTemplate></MainPanelTemplate>
+  <MainPanelTemplate v-if="showMainPanel"></MainPanelTemplate>
+  <RouterView v-else></RouterView>
 </template>
 
 <style scoped>

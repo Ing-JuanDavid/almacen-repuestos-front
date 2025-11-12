@@ -1,12 +1,15 @@
 <script lang="ts">
-import { RouterLink } from 'vue-router'
-
 export default {
   name: 'PanelBase',
   data() {
     return {
       sidebarOpen: false,
     }
+  },
+  methods: {
+    logout() {
+      this.$router.push('/login')
+    },
   },
 }
 </script>
@@ -65,13 +68,14 @@ export default {
             </router-link>
           </li>
           <li>
-            <router-link
-              to="/login"
+            <a
+              href="#"
+              @click.prevent="logout"
               class="flex items-center gap-3 p-2 rounded hover:bg-gray-800 transition"
             >
               <i class="fa-solid fa-right-from-bracket"></i>
               <span>Salir</span>
-            </router-link>
+            </a>
           </li>
         </ul>
       </nav>
