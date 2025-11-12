@@ -1,57 +1,67 @@
 <template>
-  <div class="login-page">
-    <div class="login-wrapper">
-      <div class="login-card">
-        <!-- Sección de imagen (lado izquierdo, oculta en móviles) -->
-        <div class="image-section">
-          <img src="/inventario-1.jpg" alt="Almacén Eléctrico" class="image-content" />
-        </div>
-
-        <!-- Sección del formulario (lado derecho) -->
-        <div class="form-section">
-          <h2 class="title">Iniciar Sesión</h2>
-
-          <form @submit.prevent="handleLogin" class="form">
-            <div class="field">
-              <label class="label">Usuario</label>
-              <input v-model="user" type="text" class="input" placeholder="tu.usuario" required />
-            </div>
-
-            <div class="field">
-              <label class="label">Contraseña</label>
-              <input
-                v-model="password"
-                type="password"
-                class="input"
-                placeholder="********"
-                required
-              />
-            </div>
-
-            <div class="field">
-              <label class="label">Rol</label>
-              <select v-model="role" class="input role-select">
-                <option value="admin">Administrador</option>
-                <option value="vendedor">Vendedor</option>
-                <option value="tecnico">Técnico</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn">Ingresar</button>
-          </form>
-
-          <p class="help">Prueba con <strong>admin</strong> o <strong>tech</strong>.</p>
-        </div>
+  <section
+    class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-600"
+  >
+    <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md text-gray-700">
+      <div class="text-center mb-8">
+        <i class="fa-solid fa-gear text-4xl text-indigo-600 mb-3"></i>
+        <h1 class="text-2xl font-bold">Sistema de Ventas</h1>
+        <p class="text-sm text-gray-500">Inicia sesión para continuar</p>
       </div>
+
+      <!-- Formulario -->
+      <form @submit.prevent="login">
+        <div class="mb-4">
+          <label class="block font-medium mb-1" for="user">Usuario</label>
+          <div class="relative">
+            <i class="fa-solid fa-user absolute left-3 top-3 text-gray-400"></i>
+            <input
+              id="user"
+              v-model="user"
+              type="text"
+              placeholder="Ingresa tu usuario"
+              class="pl-10 pr-3 py-2 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-indigo-400 outline-none"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label class="block font-medium mb-1" for="password">Contraseña</label>
+          <div class="relative">
+            <i class="fa-solid fa-lock absolute left-3 top-3 text-gray-400"></i>
+            <input
+              id="password"
+              v-model="password"
+              type="password"
+              placeholder="********"
+              class="pl-10 pr-3 py-2 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-indigo-400 outline-none"
+              required
+            />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-md flex items-center justify-center gap-2 transition"
+        >
+          <i class="fa-solid fa-right-to-bracket"></i>
+          Iniciar sesión
+        </button>
+      </form>
+
+      <p class="mt-6 text-center text-sm text-gray-500">
+        © {{ new Date().getFullYear() }} Almacén de Repuestos
+      </p>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 
-defineOptions({ name: 'LoginView' })
+defineOptions({ name: 'LogInView' })
 
 const router = useRouter()
 const user = ref('')
