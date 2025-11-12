@@ -1,6 +1,6 @@
 <script lang="ts">
 export default {
-  name: 'PanelBase',
+  name: 'MainLayout',
   data() {
     return {
       sidebarOpen: false,
@@ -32,13 +32,13 @@ export default {
       <nav class="flex-1 overflow-y-auto py-4">
         <ul class="space-y-2 px-4">
           <li>
-            <routerLink
+            <router-link
               to="/"
               class="flex items-center gap-3 p-2 rounded hover:bg-gray-800 transition"
             >
               <i class="fa-solid fa-house"></i>
               <span>Inicio</span>
-            </routerLink>
+            </router-link>
           </li>
           <li>
             <router-link
@@ -117,7 +117,7 @@ export default {
       <!-- CONTENIDO PRINCIPAL -->
       <main class="flex-1 mt-16 p-6">
         <div class="bg-white rounded-xl shadow p-6">
-          <router-view></router-view>
+          <slot></slot>
         </div>
       </main>
     </div>
