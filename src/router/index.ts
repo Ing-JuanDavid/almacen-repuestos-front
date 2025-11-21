@@ -4,6 +4,7 @@ import ConfigView from '@/views/ConfigView.vue'
 import LoginView from '@/views/LogInView.vue'
 import Dashboard from '@/layouts/Dashboard.vue'
 import SalesView from '@/modules/ventas/views/SalesView.vue'
+import NewSaleView from '@/modules/ventas/views/NewSaleView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,8 +25,13 @@ const router = createRouter({
           component: InventoryView,
         },
         {
-          path: 'ventas',
-          name: 'ventas',
+          path: 'ventas/nueva',
+          name: 'ventasNueva',
+          component: NewSaleView,
+        },
+        {
+          path: 'ventas/historial',
+          name: 'ventasHistorial',
           component: SalesView,
         },
         {
