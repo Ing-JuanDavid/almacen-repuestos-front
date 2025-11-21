@@ -1,10 +1,7 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import MainPanelTemplate from './views/MainPanelTemplate.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <MainPanelTemplate></MainPanelTemplate>
+  <router-view></router-view>
 </template>
 
 <style scoped>

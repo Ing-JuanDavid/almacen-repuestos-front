@@ -1,6 +1,4 @@
 <script lang="ts">
-import { RouterLink } from 'vue-router'
-
 export default {
   name: 'PanelBase',
   data() {
@@ -30,7 +28,7 @@ export default {
         <ul class="space-y-2 px-4">
           <li>
             <routerLink
-              to="/"
+              to="/dashboard"
               class="flex items-center gap-3 p-2 rounded hover:bg-gray-800 transition"
             >
               <i class="fa-solid fa-house"></i>
@@ -39,7 +37,7 @@ export default {
           </li>
           <li>
             <router-link
-              to="/inventario"
+              to="/dashboard/inventario"
               class="flex items-center gap-3 p-2 rounded hover:bg-gray-800 transition"
             >
               <i class="fa-solid fa-boxes-stacked"></i>
@@ -48,7 +46,7 @@ export default {
           </li>
           <li>
             <router-link
-              to="/ventas"
+              to="/dashboard/ventas"
               class="flex items-center gap-3 p-2 rounded hover:bg-gray-800 transition"
             >
               <i class="fa-solid fa-receipt"></i>
@@ -57,7 +55,7 @@ export default {
           </li>
           <li>
             <router-link
-              to="/config"
+              to="/dashboard/config"
               class="flex items-center gap-3 p-2 rounded hover:bg-gray-800 transition"
             >
               <i class="fa-solid fa-gear"></i>

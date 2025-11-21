@@ -68,7 +68,7 @@ const router = useRouter()
 const login = () => {
   // Aquí podrías validar credenciales en el futuro
   if (user.value && password.value) {
-    router.push('/home') // 👈 Navega al HomeView
+    router.push('/dashboard')
   } else {
     alert('Por favor ingresa tus credenciales')
   }
